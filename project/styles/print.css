@@ -1,0 +1,55 @@
+body { 
+    font-size: 14px !important;
+}
+
+li.card {
+    margin-top: 5px !important;
+    padding: 0% !important;
+}
+.header{
+    display:none !important;
+}
+.main div {
+padding: 0% !important;
+margin: 0% !important;
+}
+.main div img{
+    width: 50% !important;
+}
+@media print {
+    p,a{
+        font-size: 14px !important;
+    }
+    h2{
+        font-size: 17px !important;
+    }
+    h1{
+        font-size: 20px !important;
+    }
+}
+/* при печати добовляются отступы */
+@media print {
+     @page{ 
+         margin: 1cm;}}
+/* убираем фон и прочее */
+@media print {
+    *,
+    *:before,
+    *:after {
+              background: transparent !important;
+              color: #000 !important;
+              /* Black prints faster */
+              box-shadow: none !important;
+              text-shadow: none !important;
+              margin: 0%;
+              padding: 0%;
+            }
+}
+
+    /* отражение ссылок */
+a[href]:after{
+content: " (" attr(href) ")";}
+
+img {
+    page-break-inside: avoid;
+  }

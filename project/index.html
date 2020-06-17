@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="shortcut icon" href="img/logotitle.ico" type="image/x-icon">
+    <link rel="stylesheet" media="print" href="styles/print.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Интернет-магазин SOHO</title>
+</head>
+<body >
+    <div id="app">
+    <div class="header">
+        <div class="header__menu">
+            <div class='message' style="align-self: center;"><a href="pages/messages.html"><img src="img/message.png" alt="" style="width: 45px;"></a></div>
+            <ul class="container">
+                    <li class="hover"><a href="index.html" class="active">Главная</a></li>
+                    <li class="hover"><a href="pages/index2.html" >О нас</a></li>
+                    <li ><a href="#" class="logo"><img src="img/logo.png" alt="logo" height="60px"></a></li>
+                    <li class="hover"><a href="pages/index3.html" >Товары</a></li>
+                    <li class="hover"><a href="pages/index4.html" >Контакты</a></li>
+                </li>
+            </ul>
+            <div class='korzina' style="align-self: center;"><a href="pages/korzina.html"><img src="img/korzina.png" alt="" style="width: 45px;"></a></div>
+        </div>
+        <div class="header__middletext container">Интернет-магазин стикеров и прочих ненужных вещей</div>
+        <div class="header__bottomtext container">Отправка заказа в течении 2-3 рабочих дней. </br>Бесплатная доставка при заказе от 700 руб (10 наборов наклеек, стикеров.)</div>
+        <div class="header__button container"><button @click='modalwindow'>Оставить заявку</button></div>
+    </div>
+    <div class="main">
+        <div class="main__block1 container">
+            <h2>Выберите категорию товара</h2>
+            <div class="block1__inner " v-for='(todo,index) in products'><img :src="todo.src" alt=""><p>{{ todo.nameproduct }}</p></div>
+        </div>
+        <div class="main__block2 container">
+            <h2>Рекомендуемые товары</h2>
+            <div class="block2__inner" v-for='(todo,index) in recomend'><img :src="todo.src" alt=""><p>{{ todo.nameproduct }}</p></div>
+        </div>
+    </div>
+    <div class="modal" >
+        sdfsdfsdfsdfsdf
+        <div class="modal__inner">
+            <form action="">
+                <label for="name">Имя:</label><br>
+                <input name="name" type="text" id="name" placeholder="Руфина"><br>
+                <label for="phone">Телефон:</label><br>
+                <input name="phone" type="text" id="phone" placeholder="+7(916)339-81-14"><br>
+                <label for="message">Сообщение:</label><br>
+                <textarea id='message' placeholder="Введите сообщение"></textarea><br>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footer__text"><strong>Проект выполнила:</strong> Гатауллина Руфина Ринатовна
+        </br>Московский политех 2020</p>
+    </div>
+</div>
+</body>
+<script src="scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script type="module">
+    import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
+  </script>
+  <script src="vue.js"></script>
+</html>
+<!-- Vue -->
+<!-- Sass -->
+<!-- БЭМ -->
+<!-- Bootstrap -->
+<!-- Адаптив -->
