@@ -121,10 +121,10 @@ new Vue({
        modalwindow: function(){
            console.log('click')
            console.log(this.modal)
-            if(this.modal){
+            if(this.modal == true){
                 this.modal = false
             }
-            if(!this.modal){
+            if(this.modal == false){
                 this.modal = true
             }
        },

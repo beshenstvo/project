@@ -12,6 +12,16 @@ body{
         color: white;
         letter-spacing: 4px;
     }
+    div.modal{
+        display: block;
+        padding: 2rem;
+        background-color: white;
+        div.modal__inner div.close{
+            display: block;
+            padding: 1rem;
+            background-color: #7246db;
+        }  
+    }
     div.header{
         background: url('../img/header.png') no-repeat center;
         height: 100vh;

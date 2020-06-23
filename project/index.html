@@ -19,52 +19,52 @@
             <ul class="container">
                     <li class="hover"><a href="index.html" class="active">Главная</a></li>
                     <li class="hover"><a href="pages/index2.html" >О нас</a></li>
-                    <li ><a href="#" class="logo"><img src="img/logo.png" alt="logo" height="60px"></a></li>
+                    <li ><a href="#" class="logo"><img src="img/logo.png" alt="logo" height="60"></a></li>
                     <li class="hover"><a href="pages/index3.html" >Товары</a></li>
-                    <li class="hover"><a href="pages/index4.html" >Контакты</a></li>
-                </li>
+                    <li class="hover"><a href="pages/index4.php" >Контакты</a></li>
             </ul>
             <div class='korzina' style="align-self: center;"><a href="pages/korzina.html"><img src="img/korzina.png" alt="" style="width: 45px;"></a></div>
         </div>
         <div class="header__middletext container">Интернет-магазин стикеров и прочих ненужных вещей</div>
-        <div class="header__bottomtext container">Отправка заказа в течении 2-3 рабочих дней. </br>Бесплатная доставка при заказе от 700 руб (10 наборов наклеек, стикеров.)</div>
+        <div class="header__bottomtext container">Отправка заказа в течении 2-3 рабочих дней. <br>Бесплатная доставка при заказе от 700 руб (10 наборов наклеек, стикеров.)</div>
         <div class="header__button container"><button @click='modalwindow'>Оставить заявку</button></div>
     </div>
     <div class="main">
         <div class="main__block1 container">
             <h2>Выберите категорию товара</h2>
-            <div class="block1__inner " v-for='(todo,index) in products'><img :src="todo.src" alt=""><p>{{ todo.nameproduct }}</p></div>
+            <div class="block1__inner " v-for='(todo,index) in products'><img :src="todo.src" alt="some"><p>{{ todo.nameproduct }}</p></div>
         </div>
         <div class="main__block2 container">
             <h2>Рекомендуемые товары</h2>
-            <div class="block2__inner" v-for='(todo,index) in recomend'><img :src="todo.src" alt=""><p>{{ todo.nameproduct }}</p></div>
+            <div class="block2__inner" v-for='(todo,index) in recomend'><img :src="todo.src" alt="some"><p>{{ todo.nameproduct }}</p></div>
         </div>
     </div>
-    <div class="modal" >
-        sdfsdfsdfsdfsdf
+    <div class="modal" v-if='modal'>
         <div class="modal__inner">
-            <form action="">
+            <form action="action.php">
+                <div class="close" @click='modalwindow'>закрыть</div>
                 <label for="name">Имя:</label><br>
                 <input name="name" type="text" id="name" placeholder="Руфина"><br>
                 <label for="phone">Телефон:</label><br>
                 <input name="phone" type="text" id="phone" placeholder="+7(916)339-81-14"><br>
                 <label for="message">Сообщение:</label><br>
                 <textarea id='message' placeholder="Введите сообщение"></textarea><br>
+                <input type="submit" value="отправить">
             </form>
         </div>
     </div>
     <div class="footer">
         <p class="footer__text"><strong>Проект выполнила:</strong> Гатауллина Руфина Ринатовна
-        </br>Московский политех 2020</p>
+        <br>Московский политех 2020</p>
     </div>
 </div>
-</body>
 <script src="scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script type="module">
     import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
   </script>
   <script src="vue.js"></script>
+</body>
 </html>
 <!-- Vue -->
 <!-- Sass -->

@@ -13,6 +13,18 @@ body h2 {
   letter-spacing: 4px;
 }
 
+body div.modal {
+  display: block;
+  padding: 2rem;
+  background-color: white;
+}
+
+body div.modal div.modal__inner div.close {
+  display: block;
+  padding: 1rem;
+  background-color: #7246db;
+}
+
 body div.header {
   background: url("../img/header.png") no-repeat center;
   height: 100vh;
