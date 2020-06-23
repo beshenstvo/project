@@ -81,6 +81,7 @@ body{
         justify-content: space-around;
         padding-top: 6rem;
         padding-bottom: 6rem;
+        
         div.main__middletext{
             color: white;
             font-size: 3.5em;
@@ -94,6 +95,9 @@ body{
             display: inline-block;
             text-align: center;
             margin: 6rem auto 6rem;
+        }
+        div.main__table{
+            text-align: center;
         }
     }
     div.footer{

@@ -106,6 +106,10 @@ body div.main div.main__korzina {
   margin: 6rem auto 6rem;
 }
 
+body div.main div.main__table {
+  text-align: center;
+}
+
 body div.footer {
   background-color: black;
   align-items: center;

@@ -21,3 +21,4 @@ $( window ).scroll(function() {
         })
     }
   });
+console.log('dddd')
