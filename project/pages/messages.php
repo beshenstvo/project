@@ -15,7 +15,7 @@
 <body>
     <div class="header">
         <div class="header__menu">
-            <div class='message' style="align-self: center;"><a href="../pages/messages.php"><img src="../img/message.png" alt="" style="width: 45px;"></a></div>
+            <div class='message' style="align-self: center;"><a href="messages.php"><img src="../img/message.png" alt="" style="width: 45px;"></a></div>
             <ul class="container">
                     <li class="hover"><a href="../index.html">Главная</a></li>
                     <li class="hover"><a href="index2.html">О нас</a></li>
@@ -24,14 +24,14 @@
                     <li class="hover"><a href="index4.html">Контакты</a></li>
                 </li>
             </ul>
-            <div class='korzina' style="align-self: center;"><a href="../pages/korzina.html"><img src="../img/korzina.png" alt="" style="width: 45px;"></a></div>
+            <div class='korzina' style="align-self: center;"><a href="korzina.html"><img src="../img/korzina.png" alt="" style="width: 45px;"></a></div>
         </div>
     </div>
     <div class="main">
         <div class="main__middletext container">Отправленные сообщения</div>
         <div class="main__table container" style="padding-bottom: 2rem;">
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT * FROM messages;';
@@ -53,7 +53,7 @@
         <div class="main__middletext container">Таблицы дополнительные для ИП</div>
         <div class="main__table container" style="padding-bottom: 2rem;">
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT * FROM first_table;';
@@ -73,7 +73,7 @@
         </div>
         <div class="main__table container" style="padding-bottom: 2rem;">
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT * FROM second_table;';
@@ -93,7 +93,7 @@
         </div>
         <div class="main__table container" style="padding-bottom: 2rem;">
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT * FROM third_table;';
@@ -113,7 +113,7 @@
         </div>
         <div class="main__table container" style="padding-bottom: 2rem;">
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT * FROM fifth_table;';
@@ -134,7 +134,7 @@
         <div class="main__table container" style="padding-bottom: 2rem; text-align: center;">
         <h3 style="color: white;">Вывод агрегирующей информации DESC</h3>
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT * FROM fourth_table ORDER BY fourth_table.price DESC;';
@@ -158,7 +158,7 @@
         <div class="main__table container" style="padding-bottom: 2rem; text-align: center;">
         <h3 style="color: white;">Вывод агрегирующей информации COUNT</h3>
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT COUNT(*) as kolichestvo FROM fourth_table;';
@@ -179,7 +179,7 @@
         <div class="main__table container" style="padding-bottom: 2rem; text-align: center;">
         <h3 style="color: white;">Вывод агрегирующей информации AVG</h3>
             <?php
-                $conn = mysqli_connect('localhost', 'root', 'root','project');
+                $conn = mysqli_connect('std-mysql', 'std_971', '123321rufina','std_971');
                 if( mysqli_connect_error() ) // проверяем корректность подключения 
                     echo 'Ошибка подключения к БД: '.mysqli_connect_error();
                 $sql = 'SELECT AVG(price) as middle_value FROM fourth_table;';
@@ -221,7 +221,7 @@
                     'padding-right' : '40px',
                 });
             $('.header__menu').empty();
-            $('.header__menu').append('<div class="message" style="align-self: center;"><a href="messages.php"><img src="../img/message.png" alt="" style="width: 45px;"></a></div><ul class="container"><li class="hover"><a href="index.html">Главная</a></li><li class="hover"><a href="index2.html" >О нас</a></li><li ><a href="#" class="logo"><img src="../img/logo.png" alt="logo" height="60"></a></li><li class="hover"><a href="index3.html" >Товары</a></li><li class="hover"><a  href="index4.html" >Контакты</a></li></ul><div class="korzina" style="align-self: center;"><a href="korzina.html"><img src="../img/korzina.png" alt="" style="width: 45px;"></a></div>');
+            $('.header__menu').append('<div class="message" style="align-self: center;"><a href="messages.php"><img src="../img/message.png" alt="" style="width: 45px;"></a></div><ul class="container"><li class="hover"><a href="../index.html">Главная</a></li><li class="hover"><a href="index2.html" >О нас</a></li><li ><a href="#" class="logo"><img src="../img/logo.png" alt="logo" height="60"></a></li><li class="hover"><a href="index3.html" >Товары</a></li><li class="hover"><a  href="index4.html" >Контакты</a></li></ul><div class="korzina" style="align-self: center;"><a href="korzina.html"><img src="../img/korzina.png" alt="" style="width: 45px;"></a></div>');
         }
         $( window ).resize(function () {
             var bodyWidth = $('body').width();
