@@ -118,15 +118,25 @@ new Vue({
         hextid: 3,
     },
     methods:{
-       modalwindow: function(){
-           console.log('click')
-           console.log(this.modal)
-            if(this.modal == true){
-                this.modal = false
-            }
-            if(this.modal == false){
+        modalwindow: function(){
+            console.log('click')
+            if(!this.modal){
                 this.modal = true
+                console.log('поменял на  true')
+                return
             }
-       },
+            if(this.modal){
+                this.modal = false
+                console.log('поменял на false')
+                return
+            }
+            console.log(this.modal)
+            console.log('dfhghjfjdbhfgbjdfbjgj')
+        },
+    //     modalclose: function(){
+    //         console.log('clickclose')
+    //         this.modal = false
+    //         console.log(this.modal)
+    //    },
     }
 })

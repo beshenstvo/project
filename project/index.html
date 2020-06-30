@@ -39,17 +39,30 @@
             <div class="block2__inner" v-for='(todo,index) in recomend'><img :src="todo.src" alt="some"><p>{{ todo.nameproduct }}</p></div>
         </div>
     </div>
-    <div class="modal" v-if='modal'>
+    <div class="modal p-10 bg-dark text-white" v-if='modal'>
         <div class="modal__inner">
-            <form action="action.php">
-                <div class="close" @click='modalwindow'>закрыть</div>
-                <label for="name">Имя:</label><br>
-                <input name="name" type="text" id="name" placeholder="Руфина"><br>
-                <label for="phone">Телефон:</label><br>
-                <input name="phone" type="text" id="phone" placeholder="+7(916)339-81-14"><br>
-                <label for="message">Сообщение:</label><br>
-                <textarea id='message' placeholder="Введите сообщение"></textarea><br>
-                <input type="submit" value="отправить">
+            <form action="pages/action.php" method="POST">
+                <div class="container" style="width: 60%; margin-top: 20px;">
+                <div class="form-group">
+                    <label for="name">Имя: </label>
+                    <input name='name' type="text" class="form-control" id="name" placeholder="Руфина">
+                </div>
+                <div class="form-group">
+                        <label for="phone">Телефон: </label>
+                        <input name='phone' type="text" class="form-control" id="phone" placeholder="79163398114">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input name='email' type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="textarea">Сообщение: </label>
+                    <textarea name='message' class="form-control" id="textarea" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+                <button type="button" class="btn btn-dark" @click='modalwindow'>Закрыть</button>
+            </div>
             </form>
         </div>
     </div>
@@ -64,6 +77,62 @@
     import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
   </script>
   <script src="vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script>
+        var bodyWidth = $('body').width();
+        if (bodyWidth < 1203) {
+            console.log('new menu!!')
+            $('.header__menu').empty();
+            $('.header__menu').css({
+                'padding-left' : '0%',
+                'padding-right' : '0%',
+            });
+            $('.header__menu').append('<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%"><a class="navbar-brand" href="#"><img height="60" src="img/logo.png" alt="logo"></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-item nav-link active" href="index.html">Главная<span class="sr-only">(current)</span></a><a class="nav-item nav-link" href="pages/index2.html">О нас</a><a class="nav-item nav-link" href="pages/index3.html">Товары</a><a class="nav-item nav-link" href="pages/index4.html">Контакты</a><a class="nav-item nav-link" href="pages/messages.php">Сообщения</a><a class="nav-item nav-link" href="pages/korzina.html">Корзина</a></div></div></nav>')
+        } else {
+            $('.header__menu').css({
+                'padding-left' : '40px',
+                'padding-right' : '40px',
+            });
+            $('.header__menu').empty();
+            $('.header__menu').append('<div class="message" style="align-self: center;"><a href="pages/messages.php"><img src="img/message.png" alt="" style="width: 45px;"></a></div><ul class="container"><li class="hover"><a href="index.html" class="active">Главная</a></li><li class="hover"><a href="pages/index2.html" >О нас</a></li><li ><a href="#" class="logo"><img src="img/logo.png" alt="logo" height="60"></a></li><li class="hover"><a href="pages/index3.html" >Товары</a></li><li class="hover"><a href="pages/index4.html" >Контакты</a></li></ul><div class="korzina" style="align-self: center;"><a href="pages/korzina.html"><img src="img/korzina.png" alt="" style="width: 45px;"></a></div>');
+        }
+        $( window ).resize(function () {
+            var bodyWidth = $('body').width();
+            if (bodyWidth < 510) {
+             $('.header__middletext').css({
+                 'font-size': '2.5em'
+             });   
+             $('h2').css({
+                 'font-size': '20px'
+             })
+            }else{
+                $('.header__middletext').css({
+                    'font-size': '3.5em'
+                }); 
+                $('h2').css({
+                    'font-size': '2rem'
+                })
+            }
+            if (bodyWidth < 1203) {
+                console.log('new menu!!')
+                $('.header__menu').empty();
+                $('.header__menu').css({
+                    'padding-left' : '0%',
+                    'padding-right' : '0%',
+                });
+                $('.header__menu').append('<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%"><a class="navbar-brand" href="#"><img height="60" src="img/logo.png" alt="logo"></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-item nav-link active" href="index.html">Главная<span class="sr-only">(current)</span></a><a class="nav-item nav-link" href="pages/index2.html">О нас</a><a class="nav-item nav-link" href="pages/index3.html">Товары</a><a class="nav-item nav-link" href="pages/index4.html">Контакты</a><a class="nav-item nav-link" href="pages/messages.php">Сообщения</a><a class="nav-item nav-link" href="pages/korzina.html">Корзина</a></div></div></nav>')
+            } else {
+                $('.header__menu').css({
+                    'padding-left' : '40px',
+                    'padding-right' : '40px',
+                });
+                $('.header__menu').empty();
+                $('.header__menu').append('<div class="message" style="align-self: center;"><a href="pages/messages.php"><img src="img/message.png" alt="" style="width: 45px;"></a></div><ul class="container"><li class="hover"><a href="index.html" class="active">Главная</a></li><li class="hover"><a href="pages/index2.html" >О нас</a></li><li ><a href="#" class="logo"><img src="img/logo.png" alt="logo" height="60"></a></li><li class="hover"><a href="pages/index3.html" >Товары</a></li><li class="hover"><a href="pages/index4.html" >Контакты</a></li></ul><div class="korzina" style="align-self: center;"><a href="pages/korzina.html"><img src="img/korzina.png" alt="" style="width: 45px;"></a></div>');
+            }
+        });
+</script>
 </body>
 </html>
 <!-- Vue -->

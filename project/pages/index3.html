@@ -37,6 +37,65 @@
         <p class="footer__text"><strong>Проект выполнила:</strong> Гатауллина Руфина Ринатовна
         </br>Московский политех 2020</p>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script>
+        var bodyWidth = $('body').width();
+        if (bodyWidth < 510) {
+            $('.header__middletext').css({
+                'font-size': '2.5em'
+            });  
+        }else{
+            $('.header__middletext').css({
+                'font-size': '3.5em'
+            }); 
+        }
+        if (bodyWidth < 1203) {
+            console.log('new menu!!')
+            $('.header__menu').empty();
+            $('.header__menu').css({
+                'padding-left' : '0%',
+                'padding-right' : '0%',
+            });
+            $('.header__menu').append('<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%"><a class="navbar-brand" href="#"><img height="60" src="../img/logo.png" alt="logo"></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-item nav-link" href="../index.html">Главная</a><a class="nav-item nav-link " href="index2.html">О нас</a><a class="nav-item nav-link active" href="index3.html">Товары</a><a class="nav-item nav-link" href="index4.html">Контакты</a><a class="nav-item nav-link" href="messages.php">Сообщения</a><a class="nav-item nav-link" href="korzina.html">Корзина</a></div></div></nav>')
+        } else {
+            $('.header__menu').css({
+                'padding-left' : '40px',
+                'padding-right' : '40px',
+            });
+            $('.header__menu').empty();
+            $('.header__menu').append('<div class="message" style="align-self: center;"><a href="messages.php"><img src="../img/message.png" alt="" style="width: 45px;"></a></div><ul class="container"><li class="hover"><a href="../index.html" >Главная</a></li><li class="hover"><a href="index2.html" >О нас</a></li><li ><a href="#" class="logo"><img src="../img/logo.png" alt="logo" height="60"></a></li><li class="hover"><a class="active" href="index3.html" >Товары</a></li><li class="hover"><a href="index4.html" >Контакты</a></li></ul><div class="korzina" style="align-self: center;"><a href="korzina.html"><img src="../img/korzina.png" alt="" style="width: 45px;"></a></div>');
+        }
+        $( window ).resize(function () {
+            var bodyWidth = $('body').width();
+            if (bodyWidth < 510) {
+                $('.header__middletext').css({
+                    'font-size': '2.5em'
+                });  
+            }else{
+                $('.header__middletext').css({
+                    'font-size': '3.5em'
+                }); 
+            }
+            if (bodyWidth < 1203) {
+                console.log('new menu!!')
+                $('.header__menu').empty();
+                $('.header__menu').css({
+                    'padding-left' : '0%',
+                    'padding-right' : '0%',
+                });
+                $('.header__menu').append('<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%"><a class="navbar-brand" href="#"><img height="60" src="../img/logo.png" alt="logo"></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-item nav-link" href="../index.html">Главная</a><a class="nav-item nav-link" href="index2.html">О нас</a><a class="nav-item nav-link active" href="index3.html">Товары</a><a class="nav-item nav-link" href="index4.html">Контакты</a><a class="nav-item nav-link" href="messages.php">Сообщения</a><a class="nav-item nav-link" href="korzina.html">Корзина</a></div></div></nav>')
+            } else {
+                $('.header__menu').css({
+                    'padding-left' : '40px',
+                    'padding-right' : '40px',
+                });
+                $('.header__menu').empty();
+                $('.header__menu').append('<div class="message" style="align-self: center;"><a href="messages.php"><img src="../img/message.png" alt="" style="width: 45px;"></a></div><ul class="container"><li class="hover"><a href="../index.html" >Главная</a></li><li class="hover"><a href="index2.html" >О нас</a></li><li ><a href="#" class="logo"><img src="../img/logo.png" alt="logo" height="60"></a></li><li class="hover"><a class="active" href="index3.html" >Товары</a></li><li class="hover"><a href="index4.html" >Контакты</a></li></ul><div class="korzina" style="align-self: center;"><a href="korzina.html"><img src="../img/korzina.png" alt="" style="width: 45px;"></a></div>');
+            }
+        });
+</script>
 </body>
 <script src="../scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
